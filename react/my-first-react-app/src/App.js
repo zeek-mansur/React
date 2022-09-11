@@ -58,7 +58,7 @@ const [showModal, setShowModal] = useState(false)
         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
           Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
            when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>
-        <a href='#'>find out more...</a>
+        <a href='#'>find out more...</a> <br />
         
       </Modal>} <br /> <br /> <br />
       <button onClick={handleOpen}>Open modal</button>
