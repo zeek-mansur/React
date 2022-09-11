@@ -6,22 +6,28 @@ import Modal from './components/Modal';
 
 
 function App() {
+const [showModal, setShowModal] = useState(true)
  const [showevents, setShowEvents] = useState(true)
  const [events, setEvents] = useState([
   {title: "mario's birthday bash", id: 1},
   {title: "browser's live stream", id: 2},
   {title: "race on moo moo farm", id: 3}
  ])
- console.log(showevents)
+
+ console.log(showModal)
+ 
   const handleClick = (id) => {
     setEvents((prevEvents)=> {
       return prevEvents.filter((event) => {
         return id !== event.id
       })
-    })
+    }) 
     console.log(id)
   }
-
+  
+  const handleClose = () => {
+    setShowModal(false)
+  }
   const subtitle = "All the latest events in Marioland"
   return (
     <div className="App">
@@ -41,17 +47,14 @@ function App() {
               <button onClick = {()=> handleClick(event.id)}>delete event</button>
             </React.Fragment>
         ))}
-      <Modal>
-      {/* <h2>10% off Coupon code!!</h2>
-      <p>Use the code at NINJA at the checkout.</p> */}
-      </Modal>
-      <Modal>
+      
+       {showModal && <Modal handleClose={handleClose}>
         <h2>Terms and Conditions</h2>
         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
           Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
            when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>
         <a href='#'>find out more...</a>
-      </Modal>
+      </Modal>}
 
     </div>
   );
