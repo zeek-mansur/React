@@ -15,7 +15,7 @@ const [showModal, setShowModal] = useState(false)
   {title: "race on moo moo farm", id: 3}
  ])
 
- console.log(showModal)
+ //console.log(showModal)
 
   const handleClick = (id) => {
     setEvents((prevEvents)=> {
@@ -23,7 +23,7 @@ const [showModal, setShowModal] = useState(false)
         return id !== event.id
       })
     }) 
-    console.log(id)
+    //console.log(id)
   }
   
   const handleClose = () => {
