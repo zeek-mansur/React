@@ -1,4 +1,5 @@
 import './App.css';
+import React from 'react';
 import {useState} from 'react'
 import Title from './components/Title'
 
@@ -23,7 +24,7 @@ function App() {
   const subtitle = "All the latest events in Marioland"
   return (
     <div className="App">
-      <Title title="Events in your Area" subtitle={subtitle}/>
+      <Title title="Events in your Area" subtitle={subtitle}/> <br />
       <Title title = "another title" subtitle="another subtitle" />
       {showevents && ( 
       <div>
@@ -34,10 +35,10 @@ function App() {
         <button onClick={()=> setShowEvents(true)}>show events</button>
       </div> )}
         {showevents && events.map((event, index)=> (
-            <div key = {event.id}>
+            <React.Fragment key = {event.id}>
               <h2>{index} - {event.title}</h2>
               <button onClick = {()=> handleClick(event.id)}>delete event</button>
-            </div>
+            </React.Fragment>
         ))}
     </div>
   );
