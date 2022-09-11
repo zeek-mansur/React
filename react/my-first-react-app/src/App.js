@@ -49,7 +49,7 @@ const [showModal, setShowModal] = useState(false)
       </div> )}
         {showevents && <EventList events={events} handleClick={handleClick}/>}
       
-       {showModal && <Modal handleClose={handleClose} isSalesModal={false}>
+       {showModal && <Modal handleClose={handleClose} isSalesModal={true}>
         <h2>Terms and Conditions</h2>
         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
           Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
