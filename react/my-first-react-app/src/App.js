@@ -6,7 +6,7 @@ import Modal from './components/Modal';
 
 
 function App() {
-const [showModal, setShowModal] = useState(true)
+const [showModal, setShowModal] = useState(false)
  const [showevents, setShowEvents] = useState(true)
  const [events, setEvents] = useState([
   {title: "mario's birthday bash", id: 1},
@@ -15,7 +15,7 @@ const [showModal, setShowModal] = useState(true)
  ])
 
  console.log(showModal)
- 
+
   const handleClick = (id) => {
     setEvents((prevEvents)=> {
       return prevEvents.filter((event) => {
@@ -28,6 +28,11 @@ const [showModal, setShowModal] = useState(true)
   const handleClose = () => {
     setShowModal(false)
   }
+
+  const handleOpen = () => {
+    setShowModal(true)
+  }
+  
   const subtitle = "All the latest events in Marioland"
   return (
     <div className="App">
@@ -54,8 +59,9 @@ const [showModal, setShowModal] = useState(true)
           Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
            when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>
         <a href='#'>find out more...</a>
-      </Modal>}
-
+        
+      </Modal>} <br /> <br /> <br />
+      <button onClick={handleOpen}>Open modal</button>
     </div>
   );
 }

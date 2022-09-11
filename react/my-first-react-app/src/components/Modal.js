@@ -8,7 +8,6 @@ export default function Modal({children, handleClose}) {
         {children}
         <br/>
         <button onClick={handleClose}>close</button>
-
       </div>
     </div>
   )
