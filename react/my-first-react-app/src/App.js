@@ -4,6 +4,7 @@ import {useState} from 'react'
 import Title from './components/Title'
 import Modal from './components/Modal'
 import EventList from './components/EventList'
+import NewEventForm from './components/NewEventForm';
 
 
 function App() {
@@ -50,14 +51,10 @@ const [showModal, setShowModal] = useState(false)
         {showevents && <EventList events={events} handleClick={handleClick}/>}
       
        {showModal && <Modal handleClose={handleClose} isSalesModal={true}>
-        <h2>Terms and Conditions</h2>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-          Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-           when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>
-        <a href='#'>find out more...</a> <br />
+        <NewEventForm /> 
         
       </Modal>} <br /> <br /> <br />
-      <button onClick={handleOpen}>Open modal</button>
+      <button onClick={handleOpen}>Add new Event</button>
     </div>
   );
 }
